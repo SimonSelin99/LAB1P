@@ -6,13 +6,7 @@ public class Volvo240 extends Car {
 
     
     public Volvo240(){
-        setNrDoors(4);
-        setColor(Color.black);
-        setEnginePower(100);
-        setModelName("Volvo240");
-        setCurrentDirection(Direction.UP);
-        setPosition(new double[] {0,0});
-        stopEngine();
+        super(4,100,Color.black,"Volvo240");
     }
 
     
@@ -20,20 +14,5 @@ public class Volvo240 extends Car {
         return getEnginePower() * 0.01 * trimFactor;
     }
 
-    public void incrementSpeed(double amount){
-	    setCurrentSpeed(getCurrentSpeed() + speedFactor() * amount);
-    }
-
-    public void decrementSpeed(double amount){
-        setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
-    }
-
-    public void gas(double amount){
-        incrementSpeed(Math.max(0,Math.min(amount,1)));
-    }
-
-    public void brake(double amount){
-        decrementSpeed(Math.max(0,Math.min(amount,1)));
-    }
 
 }
